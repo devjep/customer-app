@@ -1,6 +1,6 @@
 <?php 
     include 'main.php';
-    include("libs/include/template/header.php");
+    include("include/template/header.php");
     $stmt = $connection->prepare("SELECT * FROM customer WHERE id={$_REQUEST['id']} "); 
     $stmt->execute(); 
     $row = $stmt->fetch();
@@ -10,6 +10,7 @@
 ?>
 <div class="container m-auto border p-lg-2">
     <h1>Customer Edit</h1>
+    <?php include("include/message.php");?>
     <form action="update.php" method="Post" enctype="multipart/form-data">
         <input type="type" hidden name="id" value="<?=$row['id']?>">
         <input type="type" hidden name="tempImage" value="<?=$row['image']?>">
@@ -66,4 +67,4 @@
 </div>
 
 
-<?php include("libs/include/template/footer.php")?>
+<?php include("include/template/footer.php")?>

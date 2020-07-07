@@ -1,6 +1,6 @@
 <?php 
     include 'main.php';
-    include("libs/include/template/header.php");
+    include("include/template/header.php");
 		try {
 	
 		$stmt = $connection->query ("
@@ -37,11 +37,10 @@
                 <label for="result"style="color:white">Result</label><input id="result" class="form-control" type="text">
             </div>
         </div>
-
         <div class="col-md-9 ">
             <div class="card">
                 <div class="card-body">
-                <?php include("libs/include/message.php");?>
+                <?php include("include/message.php");?>
                     <div class="p-2">
                         <a href="register.php" class="btn btn-primary " width="30;">Add New Customer</a>
                     </div>
@@ -70,4 +69,4 @@
     </div>
 </div>
 
-<?php include("libs/include/template/footer.php")?>
+<?php include("include/template/footer.php")?>

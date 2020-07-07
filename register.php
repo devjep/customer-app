@@ -1,6 +1,6 @@
 <?php
 
- include("libs/include/template/header.php");
+ include("include/template/header.php");
 
 ?>
 
@@ -8,7 +8,7 @@
 
 <div class="container border  p-3">
     <h1>Customer Registration</h1>
-    <?php include("libs/include/message.php");?>
+    <?php include("include/message.php");?>
     <form  id="myForm" action="create.php" method="Post" enctype="multipart/form-data" >
         <div class="input-group mb-3 input-group-sm">
            <div class="input-group-prepend">
@@ -66,4 +66,4 @@
        
 </div>
 
-<?php include("libs/include/template/footer.php")?>
+<?php include("include/template/footer.php")?>

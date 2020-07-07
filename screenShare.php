@@ -1,6 +1,6 @@
 <?php
     include 'main.php';
-    include("libs/include/template/header.php");
+    include("include/template/header.php");
 ?>
 
 <div class="container">
@@ -16,6 +16,6 @@
 </div>
 
 
-<?php include("libs/include/template/footer.php")?>
+<?php include("include/template/footer.php")?>
 
 

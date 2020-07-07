@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include 'main.php';
-    include("libs/include/template/header.php");
+    include("include/template/header.php");
     $stmt = $connection->prepare("SELECT * FROM customer WHERE email='{$_REQUEST['email']}' "); 
     $stmt->execute(); 
     $row = $stmt->fetch();
@@ -38,4 +38,4 @@
         </div>
     </div>     
 </div>
-<?php include("libs/include/template/footer.php")?>
+<?php include("include/template/footer.php")?>
