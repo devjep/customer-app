@@ -1,4 +1,36 @@
+//data table
 $('#customerTable').DataTable();
+
+//delete button
+$(".delete").click(function(e){
+    
+    var r = confirm('Are you sure you want to delete?');
+    if(r != true)
+    {
+        return false;
+    }
+   
+})
+//reset button
+$(".reset").click(function(e){
+    var l = confirm('Are you sure you want to reset the data?');
+    if(l == true)
+    {
+        //clear or reset form value
+        document.getElementById("firstname").value = '';
+        document.getElementById("lastname").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("city").value = '';
+        document.getElementById("country").value = '';
+        document.getElementById("image").value = '';
+        document.getElementById("firstname").focus();
+    }
+    else{
+        return false;
+    }
+   
+})
+
 
 //Image Preview
 var loadFile = function(event) {
@@ -10,50 +42,38 @@ reader.onload = function(){
 reader.readAsDataURL(event.target.files[0]);
 };
 
-//clear or reset form value
-function reset() {
-    
-    document.getElementById("firstname").value = '';
-    document.getElementById("lastname").value = '';
-    document.getElementById("email").value = '';
-    document.getElementById("city").value = '';
-    document.getElementById("country").value = '';
-    document.getElementById("image").value = '';
-    document.getElementById("firstname").focus();
-    
- }
 
 //calculator
+
 $(document).ready(function(){
     var displayValue = '0';   
-    $('#result').text(displayValue);
-
+    $("#result",window.parent.document).val(displayValue)
     $('.key').each(function(index, key){       
         $(this).click(function(e){
             if(displayValue == '0') displayValue = '';
             if($(this).text() == 'C')
             {
                 displayValue = '0';
-                $('#result').text(displayValue);
+                $("#result",window.parent.document).val(displayValue)
             }
             else if($(this).text() == '=')
             {
                 try
                 {
                     displayValue = eval(displayValue);
-                    $('#result').text(displayValue);
+                    $("#result",window.parent.document).val(displayValue)
                     displayValue = '0';
                 }
                 catch (e)
                 {
                     displayValue = '0';
-                    $('#result').text('ERROR');
+                    $("#result",window.parent.document).val('ERROR')
                 }               
             }
             else
             {
                 displayValue += $(this).text();
-                $('#result').text(displayValue);
+                $("#result",window.parent.document).val(displayValue)
             }
             e.preventDefault()
         })
@@ -73,7 +93,7 @@ var displayMediaOptions = {
   video: {
     cursor: "always"
   },
-  audio: false
+  audio: true
 };
 
 // Set event listeners for the start and stop buttons
@@ -102,3 +122,15 @@ function stopCapture(evt) {
     videoElem.srcObject = null;
 }
 
+console.log = msg => logElem.innerHTML += `${msg}<br>`;
+console.error = msg => logElem.innerHTML += `<span class="error">${msg}</span><br>`;
+console.warn = msg => logElem.innerHTML += `<span class="warn">${msg}<span><br>`;
+console.info = msg => logElem.innerHTML += `<span class="info">${msg}</span><br>`;
+function dumpOptionsInfo() {
+    const videoTrack = videoElem.srcObject.getVideoTracks()[0];
+   
+    console.info("Track settings:");
+    console.info(JSON.stringify(videoTrack.getSettings(), null, 2));
+    console.info("Track constraints:");
+    console.info(JSON.stringify(videoTrack.getConstraints(), null, 2));
+}

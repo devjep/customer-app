@@ -14,9 +14,9 @@
     $path = $basePath.'/assests/img/upload/'.$row['image'];
   
 ?>
-<div class="container">       
+<div class="container m-auto">       
     <div class="card">
-        <div class="card-header"><h2>Customer Profile<h2></div>
+        <div class="card-header"><h5>Customer Profile<h5></div>
         <div class="card-body">
         
             <div class="row">

@@ -36,7 +36,7 @@
 }
 
 .equal-key {
-    width: 63%;
+    width: 20%;
     background-color: #4a9840;
     color: white;
 }
@@ -54,7 +54,7 @@
 
 /* google api css */
 #video {
-    border: 1px solid #999;
+    border: 2px solid #999;
     width: 100%;
     
   }

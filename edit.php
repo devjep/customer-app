@@ -51,7 +51,10 @@
                <option value="Germany">Germany</option>
            </select>
          </div>
-         <input type="file" name="fileToUpload" id="fileToUpload" onchange="loadFile(event)" value="<?=$row['image']?>" accept="image/*">
+         <label for="fileToUpload">Image</label>
+         <div>
+           <input type="file" name="fileToUpload" id="fileToUpload" onchange="loadFile(event)" value="<?=$row['image']?>" accept="image/*" >
+         </div>
          <div>
               <img id="output" width="100"/>
           </div> 

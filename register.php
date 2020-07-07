@@ -1,7 +1,7 @@
 <?php
 
  include("libs/include/template/header.php");
- $today=date('Y-m-d H:i');
+
 ?>
 
 
@@ -58,7 +58,7 @@
           
           <div class="justify-content-between">
               <input type="submit" class="btn btn-primary  mt-2" value="Register">
-              <button  class="btn btn-danger  mt-2" value="Reset"  onclick="reset()">Reset</button>
+              <button  class="btn btn-danger  mt-2 reset" value="Reset">Reset</button>
           </div>
     </form>
 
